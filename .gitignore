@@ -1,0 +1,8 @@
+output.txt
+/data
+outputs/
+notebooks/train_kaggle.ipynb
+notebooks/validate_processed_data.ipynb
+.vscode/
+__pycache__/
+outputs/

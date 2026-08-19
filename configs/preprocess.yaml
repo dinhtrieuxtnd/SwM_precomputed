@@ -1,0 +1,30 @@
+preprocessing:
+  name: mindsmall_v1
+  seed: 42
+
+input:
+  train_behaviors: data/raw/MINDsmall_train/behaviors.tsv
+  train_news: data/raw/MINDsmall_train/news.tsv
+  dev_behaviors: data/raw/MINDsmall_dev/behaviors.tsv
+  dev_news: data/raw/MINDsmall_dev/news.tsv
+
+output:
+  directory: data/processed/mindsmall_v1
+  overwrite: false
+
+sequence:
+  # De 50 la hop ly
+  max_sequence_length: 50
+  padding_id: 0
+
+text:
+  columns:
+    - title
+
+split:
+  validation_ratio: 0.5
+
+embedding:
+  model: sentence-transformers/all-MiniLM-L6-v2
+  # De 40 la hop ly
+  max_token_length: 40

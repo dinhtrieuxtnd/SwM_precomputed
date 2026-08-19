@@ -1,0 +1,7 @@
+matplotlib
+numpy
+pandas
+PyYAML
+sentence-transformers
+torch
+tqdm

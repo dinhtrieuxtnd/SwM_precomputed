@@ -1,0 +1,36 @@
+experiment:
+  name: sasrec_baseline
+
+data:
+  processed:
+    output_dir: data/processed/mindsmall_v1
+  max_sequence_length: 50   #50
+  max_token_length: 40      #40
+  padding_id: 0
+
+model:
+  name: sasrec
+  padding_id: 0
+  embedding_dim: 384    # This is the dimension of miniLM-L6-v2 embeddings
+  num_blocks: 2
+  num_heads: 1
+  dropout: 0.2
+
+training:
+  epochs: 40
+  batch_size: 256
+  seed: 42
+  num_workers: 8
+  early_stopping:
+    min_delta: 0.0001
+    patience: 4
+  gradient_clip_norm:
+    max_norm: 5.0
+
+optimizer:
+  name: adamw
+  learning_rate: 0.001
+
+evaluation:
+  num_negatives: 100
+  k: 10
